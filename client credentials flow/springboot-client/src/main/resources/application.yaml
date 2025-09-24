@@ -1,0 +1,24 @@
+server:
+  port: 9000
+spring:
+  application:
+     name: springboot-client
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://127.0.0.1:8181/realms/oauth2-springboot
+      client:
+        registration:
+          oauth2-keycloak-client:
+            client-id: oauth2-keycloak-client
+            client-secret: IKY9i5YRimACn1F9PX3W3iKTgHwJhbjd
+            authorization-grant-type: client_credentials
+            scope: openid,profile,roles,email
+        provider:
+          oauth2-keycloak-client:
+            token-uri: http://127.0.0.1:8181/realms/oauth2-springboot/protocol/openid-connect/token
+
+resource:
+  server:
+    url: http://localhost:8082/resource

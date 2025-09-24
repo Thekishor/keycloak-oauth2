@@ -1,0 +1,10 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: springboot-pkce
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://127.0.0.1:8181/realms/oauth2-springboot
